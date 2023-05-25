@@ -23,13 +23,14 @@ fi
 
 cp student-submission/ListExamples.java grading-area
 cp TestListExamples.java grading-area
+
 cp -r lib grading-area #copying recursively and everything in library folder to grading area 
 
-cd grading-area
+#take out cd grading-area because already below
 
 javac -cp $CPATH grading-area/*.java 
-
-java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples
+#reroute JUnit test output to output.txt file
+java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > output.txt
 
 
 
